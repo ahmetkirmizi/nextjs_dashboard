@@ -8,11 +8,17 @@ export default async function Page() {
 
   const revenue = await fetchRevenue();
   const latestInvoices = await fetchLatestInvoices();
-  const cardDatas = await fetchCardData();
+  /*const cardDatas = await fetchCardData();
   const totalPaidInvoices = cardDatas.totalPaidInvoices;
   const totalPendingInvoices = cardDatas.totalPendingInvoices;
   const numberOfInvoices = cardDatas.numberOfInvoices;
-  const numberOfCustomers = cardDatas.numberOfCustomers;
+  const numberOfCustomers = cardDatas.numberOfCustomers;*/
+  const {
+    numberOfInvoices,
+    numberOfCustomers,
+    totalPaidInvoices,
+    totalPendingInvoices,
+  } = await fetchCardData();
 
   return (
     <main>
